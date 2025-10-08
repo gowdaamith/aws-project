@@ -1,0 +1,10 @@
+1.IAM -> Users -> Add User
+   >>UserName: website-deployer
+     Access type: Programatic access or AWS management console Access
+
+2.Attach policies: AmazonS3fullAccess 
+                 
+3.Save the Access key ID and Secret key  if using CLI
+
+
+ 
