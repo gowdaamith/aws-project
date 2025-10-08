@@ -1,0 +1,20 @@
+Configure S3 bucket Policy for public Access
+
+1.Go to the permission -> Bucket Policy
+2.Add a Policy like this  :
+
+{
+ "Version" : "2012-10-17"
+ "Statement": [
+   {
+      "Sid":"PublicReadGetObject",
+      "Effect": "Allow",
+      "Principle": "*",
+      "Action":[
+          "s3:GetObject"
+       ],
+      "Resources": "arn:aws:s3:::bucket-name/*"
+    }
+ ]
+}
+
