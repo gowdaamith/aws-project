@@ -1,0 +1,21 @@
+1. Create  an S3  bucket for Hosting 
+
+1.Log into the AWS console and search for S3
+   >>Create bucket
+  *Bucket name: must be global and unique
+  *Region: Choose closest to your user
+  *Uncheck "block all public access"[we will configure policies manually]
+  *Enable versioning [for backup]
+
+2.Upload your website files to the Bucket
+  
+3.Enable static website files hosting
+  *Go to properties  -> enable Static Website hosting
+  *Select Enable
+  *Index document: index.html
+  *error document: error.html(optional)
+
+
+ 
+
+
