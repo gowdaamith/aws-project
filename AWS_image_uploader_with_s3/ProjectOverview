@@ -1,0 +1,22 @@
+A simple web app where users can upload images to AWS s3 and view them .NO domain name required -s3 provides URL for the Frontend
+
+AWS Services to use:
+
+1.S3 -store immages and host static frontend
+2.Lambda -Resize or process iamges when upload
+3.API gateway -if you want backend logic for image metadata
+4.IAM ROLES and policies- Allow frontend ro lambda to access s3
+
+Funtional requirement :
+1.User select an image from there computer
+2.Image gets  uplaoded to an S3 bucket
+3.Uploaded  images are listed and can be viewed 
+4.Resize the imagges automatically using lambda
+
+
+How it work :
+1.Frontend hosted in s3 lets user upload images
+2.Images go directly to an S3 bucket
+3.Lambda triggers on S3 upload to proccess the image
+4.Frontend fetches and displays  the list of imagges from S3
+
