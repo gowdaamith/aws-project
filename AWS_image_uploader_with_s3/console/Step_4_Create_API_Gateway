@@ -1,0 +1,30 @@
+Creating a API Gateway
+
+1.Go to API Gateway >> create API >> HTTP API >>>build  
+  >>Give it a name[ImageUploaderApi]
+2.Select the ip address type
+  >>ipv4
+  >>dualstack [Both ipv4 and ipv6]
+
+3.Integration [specify the backend service that your API will communicate with ,These are called integrations .]
+   >>select the lambda function
+     >>region and the version
+
+4.configure the route
+Method 
+*Post
+Resource Path
+*/uploads
+integration target
+*amith-lambda
+
+**you can add addtionall route
+
+5.Define stage -optional[no idea right known]
+
+Then click create
+
+
+
+  
+
