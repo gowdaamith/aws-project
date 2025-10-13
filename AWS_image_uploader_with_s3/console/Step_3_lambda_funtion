@@ -1,0 +1,12 @@
+Create a Lambda funtion
+
+1.Go to  the search bar >> search for the lambda >> create a funtion
+  >>Authour from the Scratch
+2.Give the lambda name [amith-lambda]
+   >>choose the run time
+3.permission
+  >>select the role you have created
+
+and create the funtion
+
+>>Then go to the code upload the code and deploy the code 
