@@ -1,0 +1,12 @@
+Lambda permissino to access the S3:
+
+1.Go to the IAM  -> Roles -> create Role 
+2.Selecct the trusted entity
+  >>AWS services
+3.Select the service to perform the action on this account
+  >lambda
+4.Add the permission need by the role 
+  >>here we are adding the s3full access
+5.Give the Role a name review all the review and create
+ >>create the role
+
