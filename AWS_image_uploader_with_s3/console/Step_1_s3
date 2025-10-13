@@ -1,0 +1,9 @@
+Step 1: Create and S3 bucket
+
+1. first sign in to the AWS console
+2.Search for the S3 in the search bar  >> click on the S3 >>> and then create bucket
+3.Enable Public accesss(optional,for viewing images)
+4.Note the Bucket Name and the region
+
+
+
