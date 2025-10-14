@@ -1,0 +1,65 @@
+Project overview : Image Uploader using AWS Lambda  and API gateway and s3
+
+Goal :
+*Build a serverless image uploder where a user select adn iamge in the browser adn uploads it ot Amaozon  S3 using and API Gateway endpoint that triggerws an 
+AWS lambda funtions without needing any backend server or domain"
+
+Architecture flow:
+
+1.frontend (HTML AND Javascript)
+  *user selets an image and clicks "Upload"
+  *Javascript sreads the image file -> converts it into base 64 and sends it as jsono to your API  gateway  endpoint
+
+2.Amazon API gateawy' 
+  *Acts as the public API endpoint that recceives the request form the fronted 
+  *it then forwards the request to the lambda funtions
+  *handles CORS SO that  browsers can call the API SAFELY
+
+3.aws LAMBDA funtion
+  *Runs automatically when the API IS called 
+  *Decodes the base 64 image data
+  *Generate a uniique  file name (using the UUID)
+  *Uplaod the image to an s3 bucket using the boto3 sdk
+
+4.Amaozon s3
+ *Stores the upload images securely 
+ *i fyou make the bucket ,images can be accessed directly via thie URL
+  *aCTS as both storage and optionallyas a static website hostts for your formtend
+
+🧱 Core AWS Components
+Component	Purpose
+S3 (Simple Storage Service)	Stores uploaded image files
+Lambda	Executes your backend logic (image upload, optional resizing)
+API Gateway (HTTP API)	Provides an HTTP endpoint for frontend to call Lambda
+IAM Role	Grants Lambda permission to write to S3
+🔐 Security and Access
+
+Lambda uses an IAM Role (e.g., LambdaS3UploadRole) with s3:PutObject and s3:GetObject permissions.
+
+You can keep your S3 bucket private and instead use presigned URLs if you want more control.
+
+🧪 Testing Flow
+
+Test Lambda alone – From AWS Console, provide a sample event and check if file uploads to S3.
+
+Test API Gateway integration – Use the “Test” feature in API Gateway to ensure Lambda is triggered correctly.
+
+Test full frontend – Open your HTML file, upload an image, and check if it appears in your S3 bucket.
+
+🌟 Optional Bonus
+
+Resize images in Lambda before uploading (using Pillow or Sharp).
+
+List images via another Lambda endpoint that reads all objects from S3 and returns their URLs.
+
+Host frontend on another S3 bucket configured for Static Website Hosting.
+
+🧭 End Result
+
+✅ Fully serverless image uploader:
+
+No EC2 or backend server.
+
+Pay only for usage (Lambda invocations + S3 storage).
+
+Scalable, simple, and production-ready structure.
