@@ -6,7 +6,7 @@ Step 1: Create and S3 bucket
 2.Then select bucket type -> General purpose bucket
 3.Give a bucket a unique name 
 4.Object ownership  
-  >> enable the ACL's
+  >> disable the ACL's
   >>object ownership  the objext writter  willl be the objext owner
 5.Uncheck the block public access settting for this bucket
 
