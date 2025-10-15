@@ -1,12 +1,32 @@
 Create a Lambda funtion
 
-1.Go to  the search bar >> search for the lambda >> create a funtion
-  >>Authour from the Scratch
-2.Give the lambda name [amith-lambda]
-   >>choose the run time
-3.permission
-  >>select the role you have created
+1.Go to  the lambda -> Create funtion
+2.
+choose author from the scratch
+name : UploadImageLambda
+Runtime : Python 3.11
+Execution Role: Choose existing -> lambdas3uploadRole
 
-and create the funtion
+3. Click create funtion
 
->>Then go to the code upload the code and deploy the code 
+Lambda function created
+
+Then add the lambda code to the lambda funtion 
+
+Paste this code in the lambda editor -> code tab
+
+=>Then click deploy
+
+Step 4: Test Lambda 
+
+1.In the Lambda console click test 
+2.create a new test evnet -> name it TestEvent
+
+and use this code 
+
+{
+   "boby":"{\image\": \"<base64string>\",\"filename\":\"test.png\"}"
+}
+
+you shoulld provide a base64 image to it
+
